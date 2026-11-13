@@ -1,0 +1,35 @@
+<section id="search">
+  <h2>Search</h2>
+  <form id="searchForm" (ngSubmit)="search()">
+    <label for="searchInput">What are you looking for?</label>
+    <input type="text" id="searchInput" name="searchInput" [(ngModel)]="text" placeholder="Pani puri, fruits, flowers...">
+
+    <label for="category">Category</label>
+    <select id="category" name="category" [(ngModel)]="category">
+      <option value="all">All</option>
+      <option value="snacks">Snacks</option>
+      <option value="juices">Juices</option>
+      <option value="fruits">Fruits and Vegetables</option>
+      <option value="flowers">Flowers</option>
+      <option value="others">Others</option>
+    </select>
+
+    <button type="submit">Search</button>
+  </form>
+
+  <h3>Results</h3>
+  <ul>
+    @if (!searched) {
+      <li>Your search results will appear here.</li>
+    } @else if (results.length === 0) {
+      <li>No items found.</li>
+    } @else {
+      @for (p of results; track p._id) {
+        <li class="d-flex justify-content-between align-items-center">
+          {{ p.name }} - {{ p.seller }} - ₹{{ p.price }}
+          <button type="button" (click)="shop.addToCart(p)">Add to Cart</button>
+        </li>
+      }
+    }
+  </ul>
+</section>

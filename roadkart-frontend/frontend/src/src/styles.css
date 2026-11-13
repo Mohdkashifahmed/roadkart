@@ -1,0 +1,326 @@
+/* ---------- Base ---------- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffffff;
+  color: #222222;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* ---------- Header and navigation ---------- */
+header {
+  text-align: center;
+  padding: 20px 10px 15px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-bottom: 4px solid #e65100;
+}
+
+header h1 {
+  font-size: 32px;
+  color: #e65100;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+nav a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+nav a:hover {
+  background-color: #e65100;
+  color: #ffffff;
+}
+
+/* Login link looks like a button */
+a[href="/login"] {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* ---------- Main and sections ---------- */
+main {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+section {
+  padding: 40px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+section h3 {
+  margin: 25px 0 15px;
+  font-size: 20px;
+  color: #e65100;
+}
+
+section > p {
+  text-align: center;
+  color: #555555;
+  margin-bottom: 10px;
+}
+
+/* Home section gets a soft orange box */
+#home {
+  background-color: #fff3e0;
+  border-radius: 12px;
+  padding: 40px 25px;
+  margin-top: 20px;
+}
+
+#home h2 {
+  font-size: 36px;
+}
+
+/* ---------- Product cards (two per row) ---------- */
+article {
+  display: inline-block;
+  vertical-align: top;
+  width: 46%;
+  margin: 1.5%;
+  padding: 18px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-left: 5px solid #e65100;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+article:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+article h4 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+article p {
+  color: #555555;
+}
+
+/* price (last paragraph in the card) */
+article p:last-of-type {
+  color: #2e7d32;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* ---------- Forms ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 450px;
+  margin: 20px auto 0;
+  padding: 25px;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border: 1px solid #999999;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 15px;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border: 2px solid #e65100;
+  background-color: #fff8f0;
+}
+
+/* ---------- Buttons ---------- */
+button {
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+button:hover {
+  background-color: #e65100;
+  border-color: #e65100;
+}
+
+/* important buttons in orange */
+#checkoutBtn,
+#sellerForm button {
+  background-color: #e65100;
+  border-color: #e65100;
+}
+
+#checkoutBtn:hover,
+#sellerForm button:hover {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+/* ---------- Lists inside sections ---------- */
+section ul {
+  list-style: none;
+}
+
+section ul li {
+  padding: 10px 5px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+/* ---------- Table ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th,
+td {
+  border: 1px solid #cccccc;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* alternate row colour */
+tr:nth-child(even) {
+  background-color: #fff3e0;
+}
+
+/* status column (last cell in each row) */
+td:last-child {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+/* ---------- Cart ---------- */
+#cart p {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 15px 0 5px;
+}
+
+output {
+  color: #2e7d32;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* ---------- Login page ---------- */
+#login {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-top: 5px solid #e65100;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#login form {
+  padding: 0;
+  border: none;
+  background-color: #ffffff;
+}
+
+#login p {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#login a {
+  color: #e65100;
+  font-weight: bold;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 25px 10px;
+  margin-top: 30px;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #ffffff;
+}
+
+footer a:hover {
+  background-color: #e65100;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  nav ul {
+    gap: 2px;
+  }
+
+  nav a {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  article {
+    width: 95%;
+  }
+
+  th,
+  td {
+    padding: 6px;
+    font-size: 14px;
+  }
+}

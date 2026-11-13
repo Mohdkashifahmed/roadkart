@@ -1,0 +1,16 @@
+<section id="login">
+  <h2>Register</h2>
+  <form id="registerForm" (ngSubmit)="register()">
+    <label for="regName">Name</label>
+    <input type="text" id="regName" name="regName" [(ngModel)]="name">
+
+    <label for="regEmail">Email</label>
+    <input type="text" id="regEmail" name="regEmail" [(ngModel)]="email">
+
+    <label for="regPassword">Password</label>
+    <input type="password" id="regPassword" name="regPassword" [(ngModel)]="password">
+
+    <button type="submit">Register</button>
+  </form>
+  <p>Already have an account? <a routerLink="/login">Login</a></p>
+</section>

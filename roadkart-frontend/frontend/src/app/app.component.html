@@ -1,0 +1,34 @@
+<header>
+  <h1>RoadKart</h1>
+  <nav>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/search">Search</a></li>
+      <li><a routerLink="/orders">Orders</a></li>
+      <li><a routerLink="/cart">Cart</a></li>
+      @if (shop.user && shop.user.isAdmin) {
+        <li><a routerLink="/admin">Admin</a></li>
+      }
+      @if (shop.user) {
+        <li><a routerLink="/login" (click)="shop.logout()">Logout</a></li>
+      } @else {
+        <li><a routerLink="/login">Login</a></li>
+      }
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <router-outlet />
+</main>
+
+<footer>
+  <p>&copy; 2026 RoadKart. Supporting local roadside sellers.</p>
+  <nav>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/search">Search</a></li>
+      <li><a routerLink="/orders">Orders</a></li>
+    </ul>
+  </nav>
+</footer>

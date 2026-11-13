@@ -1,0 +1,24 @@
+<section id="checkout">
+  <h2>Checkout</h2>
+
+  @if (!shop.user) {
+    <p>Please login to place your order.</p>
+    <button type="button" class="d-block mx-auto" routerLink="/login">Go to Login</button>
+  } @else if (shop.cart.length === 0) {
+    <p>Your cart is empty. Add some items first.</p>
+    <button type="button" class="d-block mx-auto" routerLink="/">Go to Home</button>
+  } @else {
+    <p>Items in cart: {{ shop.cart.length }}</p>
+    <p>Total amount: ₹{{ shop.getTotal() }}</p>
+
+    <form id="checkoutForm" (ngSubmit)="placeOrder()">
+      <label for="address">Delivery Address</label>
+      <textarea id="address" name="address" rows="3" [(ngModel)]="address"></textarea>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" [(ngModel)]="phone">
+
+      <button type="submit" id="checkoutBtn">Place Order</button>
+    </form>
+  }
+</section>

@@ -1,0 +1,19 @@
+<section id="home">
+  <h2>Home</h2>
+  <p>Fresh food and goods from your local roadside sellers, delivered to your door.</p>
+
+  <h3>Popular Near You</h3>
+
+  @if (products.length === 0) {
+    <p>No products yet.</p>
+  }
+
+  @for (p of products; track p._id) {
+    <article>
+      <h4>{{ p.name }}</h4>
+      <p>Seller: {{ p.seller }}</p>
+      <p>Price: ₹{{ p.price }}</p>
+      <button type="button" (click)="shop.addToCart(p)">Add to Cart</button>
+    </article>
+  }
+</section>

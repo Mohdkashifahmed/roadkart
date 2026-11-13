@@ -1,0 +1,33 @@
+<section id="orders">
+  <h2>Orders</h2>
+
+  @if (!shop.user) {
+    <p>Please login to see your orders.</p>
+    <button type="button" class="d-block mx-auto" routerLink="/login">Go to Login</button>
+  } @else if (orders.length === 0) {
+    <p>You have not placed any orders yet.</p>
+  } @else {
+    <table>
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Date</th>
+          <th>Items</th>
+          <th>Amount</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (o of orders; track o._id) {
+          <tr>
+            <td>#{{ o._id.slice(-6) }}</td>
+            <td>{{ o.date }}</td>
+            <td>{{ shop.getItemNames(o) }}</td>
+            <td>₹{{ o.total }}</td>
+            <td>{{ o.status }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</section>
